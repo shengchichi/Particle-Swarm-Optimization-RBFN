@@ -3,7 +3,7 @@
     Using Particle Swarm Optimization
     Input: Dataset ==> 4 dimensional and 6 dimensional, Iteration, Population
 	Output: Enter the iteration and population. Select the dataset and wait for a few seconds.
-			The program will print down the trajectory of the circle(car).
+		The program will print down the trajectory of the circle(car).
 	
 ## Dataset
 [4dimensional](/PSO_RBF/data3d)  
