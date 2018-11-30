@@ -1,9 +1,21 @@
-# Particle Swarm Optimization
+# Particle Swarm Optimization & RBFN
 ## Computational Intelligence Project3
-    Using Particle Swarm Optimization to train RBFNetwork in order to obtain parameters to simulate a mobile car driving.
-    Input: Dataset ==> 4 dimensional and 6 dimensional, Iteration, Population
-	Output: Enter the iteration and population. Select the dataset and wait for a few seconds.
-		The program will print down the trajectory of the circle(car).
+	Using Particle Swarm Optimization to adjust RBF Network parameters(wj , mj , σj ).
+	### Simulating Car Formula
+	![example](/IMAGE/formula.png) 
+	### 4dimensional format
+		distance of front, right(45degrees), left(45degrees), Degrees to turn
+	### 6dimensional format
+		x, y, distance of front, right(45degrees), left(45degrees), Degrees to turn
+	### RBF Network 
+		Input: distance of front, right(45degrees), left(45degrees)//4dimensional format
+		Output: degrees to turn
+	### Program
+	Input:  Dataset ==> 4 dimensional or 6 dimensional, Iteration, Population
+	Output: Wait for a few seconds. After adjusting the parameters,the program will print down the trajectory of the circle(car).
+	
+    
+	
 	
 ## Dataset
 [4dimensional](/PSO_RBF/data3d)  
