@@ -1,4 +1,4 @@
-package PSO_RBF;
+ï»¿package PSO_RBF;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,8 +18,8 @@ import javax.swing.JTextField;
 
 public class pso_rbf extends JFrame implements ActionListener{
 
-	int size =1000;//¥²¶·¬°°¸¼Æ
-	int loop=1000;//­¡¥N¦¸¼Æ
+	int size =1000;//å¿…é ˆç‚ºå¶æ•¸
+	int loop=1000;//è¿­ä»£æ¬¡æ•¸
 	double error=0;
 	double err_min = 1000;
 	double print;
@@ -28,23 +28,23 @@ public class pso_rbf extends JFrame implements ActionListener{
 	double globalFitness = 1000;
 	double vmax =0.5;
 	double vmin =-0.5;
-	boolean type=false;//4ºû¬Otrue
+	boolean type=false;//4ç¶­æ˜¯true
 	int J=3;
 	int p=3;
 	int dim =4;
 	ArrayList<Double> err;
 	ArrayList<Double> global_p;
-	ArrayList<Double> y = new ArrayList<Double>();//´Á±æ¿é¥X
+	ArrayList<Double> y = new ArrayList<Double>();//æœŸæœ›è¼¸å‡º
 	ArrayList<ArrayList<Double>> x = new ArrayList<ArrayList<Double>>();
 	ArrayList<Double> x_row = new ArrayList<Double>();
 	int data[];
 	String s[];//all files
 	ArrayList<String> temp = new ArrayList<String>();
 	ArrayList<String> temp2 = new ArrayList<String>();
-	JButton enter = new JButton("¿é¤J");
-	JTextField lp = new JTextField("­¡¥N¦¸¼Æ");
-	JTextField pop = new JTextField("±Ú¸s¤j¤p");
-	String[] str = {"4ºû","6ºû"};
+	JButton enter = new JButton("submit");
+	JTextField lp = new JTextField("iteration");
+	JTextField pop = new JTextField("population");
+	String[] str = {"4dimension","6dimension"};
 	JComboBox cb = new JComboBox(str);
 	Individual ind[];
 	
@@ -69,13 +69,13 @@ public class pso_rbf extends JFrame implements ActionListener{
 	public void start()
 	{
 		scan();
-		func();//¥¿³Wµe y
+		func();//æ­£è¦ç•« y
 		create();
 		int count=0;
 		double t=0;
 		for(int i=0;i<loop;i++)
 		{
-			calculate();//­pºâ¾AÀ³¨ç
+			calculate();//è¨ˆç®—é©æ‡‰å‡½
 			update();
 			if(count == 100)
 				break;
@@ -173,7 +173,7 @@ public class pso_rbf extends JFrame implements ActionListener{
 			double delta = 0;
 			double temp = 0;//f
 			double fitness = 0;
-			double out = 0;//rbf¿é¥X=>F
+			double out = 0;//rbfè¼¸å‡º=>F
 			error =0;
 			for(int list=0;list<x.size();list++)
 			{
@@ -194,7 +194,7 @@ public class pso_rbf extends JFrame implements ActionListener{
 				fitness += (y.get(list)-out)*(y.get(list)-out)/2;
 				error += Math.abs((y.get(list)-out)/y.size());
 			}
-			if(fitness < ind[i].localFitness)//¬ö¿ı§½³¡³Ì¨Î­È
+			if(fitness < ind[i].localFitness)//ç´€éŒ„å±€éƒ¨æœ€ä½³å€¼
 			{
 				ind[i].setFitness(fitness);
 			}
@@ -204,7 +204,7 @@ public class pso_rbf extends JFrame implements ActionListener{
 				err = new ArrayList<Double>(ind[i].get_x());
 			}
 		}
-		//§ó·s¥ş°ì·¥¤p­È
+		//æ›´æ–°å…¨åŸŸæ¥µå°å€¼
 		
 		for(int i=0;i<size;i++)
 		{
@@ -243,9 +243,9 @@ public class pso_rbf extends JFrame implements ActionListener{
 			f = new File("data5d");
 			ss = "data5d/";
 		}
-		if(f.isDirectory())//­YÅª¨ú¨ìªº¬O¸ê®Æ§¨
+		if(f.isDirectory())//è‹¥è®€å–åˆ°çš„æ˜¯è³‡æ–™å¤¾
 		{
-			s=f.list();//ÀÉ®×list
+			s=f.list();//æª”æ¡ˆlist
 			//System.out.println(s.length+s[0]);
 		}
 		data = new int[s.length];
